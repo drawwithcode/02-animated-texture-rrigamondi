@@ -207,3 +207,14 @@ function mouseMoved(){
   y_cam_mov = mouseY*cam_mov;
   cam.lookAt(x_cam_mov,y_cam_mov,0)
 }
+
+//move camera view for parallax effect
+function touchMoved(){
+  //change how much view can move based on cam mode
+  if (sw_cam == true){cam_mov = 0.06}
+  else if (sw_cam == false){cam_mov = 0.02}
+  x_cam_mov = mouseX*cam_mov;
+  y_cam_mov = mouseY*cam_mov;
+  cam.lookAt(x_cam_mov,y_cam_mov,0)
+  return false;
+}
